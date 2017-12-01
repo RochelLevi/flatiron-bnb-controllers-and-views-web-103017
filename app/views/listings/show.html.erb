@@ -1,0 +1,16 @@
+<h1><%=@listing.title%></h1>
+  <ul>
+    <li>Listing Type: <%=@listing.listing_type %></li>
+    <li>Price: <%=@listing.price %></li>
+    <li>Neighborhood: <%=@listing.neighborhood.name %></li>
+    <li>Host: <%=@listing.host.name %></li>
+  </ul>
+
+  <h3>Make a reservation</h3>
+   <%= form_for Reservation.new do |f| %><br>
+    <%= f.date_field :check_in%>
+
+   <% end %>
+
+
+   

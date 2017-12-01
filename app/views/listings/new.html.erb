@@ -1,0 +1,22 @@
+<h2>Create A Listing</h2>
+  <%= form_for @listing do |f|%>
+  <%= f.label :address %>
+  <%= f.text_field :address %><br>
+
+  <%= f.label :listing_type %>
+  <%= f.text_field :listing_type %><br>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %><br>
+
+  <%= f.label :price %>
+  <%= f.number_field :price %><br>
+
+  <%= f.label :neighborhood_id %>
+  <%= f.collection_select :neighborhood_id, Neighborhood.all, :id, :name %><br>
+  <%= f.label :host_id %>
+  <%= f.collection_select :host_id, User.all, :id, :name %><br>
+<% end %>

@@ -1,0 +1,25 @@
+<h1><%=@user.name%></h1>
+
+<h6><%=link_to "Create a New Listing", new_listing_path %></h6>
+<h6><%=link_to "Browse all listings", new_listing_path %></h6>
+
+<h3>Listings</h3>
+<%@user.listings.each do |listing| %>
+  <ul>
+    <li><%=listing.name %></li>
+    <li><%=listing.listing_type %></li>
+    <li><%=listing.title %></li>
+    <li><%=listing.price %></li>
+    <li><%=listing.neighborhood.name %></li>
+    <li><%=listing.host.name %></li>
+  </ul>
+<%end%>
+
+<h3>Reservations</h3>
+<%@user.reservations.each do |reservation| %>
+  <ul>
+    <li><%=reservation.check_in %></li>
+    <li><%=reservation.check_out %></li>
+    <li><%=reservation.listing %></li>
+  </ul>
+<%end%>

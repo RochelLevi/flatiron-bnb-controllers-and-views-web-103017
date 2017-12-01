@@ -7,8 +7,11 @@ class User < ActiveRecord::Base
   ## As a guest
   has_many :trip_listings, :through => :trips, :source => :listing
   has_many :hosts, :through => :trip_listings, :foreign_key => :host_id
+  accepts_nested_attributes_for :reservations
 
   ## As a host
   has_many :guests, :through => :reservations, :class_name => "User"
   has_many :host_reviews, :through => :listings, :source => :reviews
+  accepts_nested_attributes_for :listings
+
 end

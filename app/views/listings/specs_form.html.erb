@@ -1,0 +1,14 @@
+
+<%= form_tag('/listings', method: 'get') do %>
+ <label>Neighborhood name:</label><br>
+ <%= select_tag 'neighborhood_id', options_for_select(Neighborhood.all.collect{ |n| [n.name, n.id] }) %><br>
+
+ <label>Checkin</label><br>
+ <%= date_field_tag :check_in %><br>
+
+ <label>Checkout</label><br>
+ <%= date_field_tag :check_out %><br>
+
+
+ <%= submit_tag "Search"%>
+<%end %>
